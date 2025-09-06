@@ -1,0 +1,59 @@
+<html th:replace="~{base::layout(~{::main})}">
+	<body>
+		<main >
+			
+         <div class="container my-5 ">
+			  <h2 class="text-center mb-4" id="contacttop">Contact Us</h2>
+			  <div class="row g-4">
+			    
+			    <!-- Static Map Image Section -->
+				<div class="col-md-6">
+				  <div class="ratio ratio-4x3 rounded shadow">
+				    <iframe
+				      src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7116.5!2d80.9452065!3d26.743544!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0!2sSanjay%20Gandhi%20Post%20Graduate%20Institute%20of%20Medical%20Sciences%20(SGPGI)%2C%20Lucknow!5e0!3m2!1sen!2sin!4v1690785600000"
+				      width="100%" height="70px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+				    </iframe>
+				  </div>
+				</div>
+
+			    <!-- Contact Form Section -->
+			    <div class="col-md-6">
+			      <form method="post" th:object="${enquiry}">
+			        <div class="mb-3">
+			          <label for="name" class="form-label">Name</label>
+			          <input type="text" th:field="${enquiry.name}" id="name" class="form-control" placeholder=" Enter Your name" required>
+			        </div>
+					<div class="mb-3">
+					<label>Select Your Gender</label>
+					<select th:field="${enquiry.gender}" class="form-control">
+						<option value="Male">Male</option>
+						<option value="Female">Female</option>
+						<option value="Other">Other</option>
+					</select>
+					</div>
+			        <div class="mb-3">
+			          <label>Enter Contact Number</label>
+					  <input type="number" th:field="${enquiry.contactNo}" class="form-control" placeholder="contact Number" required>
+			        </div>
+					<div class="mb-3">
+						<label>Enter your email</label>
+						<input type="email" th:field="${enquiry.email}" class="form-control" placeholder="Enter Your Email" required>
+					</div>
+					<div class="mb-3">
+						<label>Enter Enquiry Subject</label>
+						<input type="text" th:field="${enquiry.subject}" class="form-control" placeholder="Enter Enquiry Subject" required>
+					</div>
+					<div class="mb-3">
+			          <label for="message" class="form-label">Message</label>
+			          <textarea id="message" th:field="${enquiry.message}"  class="form-control" rows="4" placeholder="Enter Enquiry Message" required></textarea>
+			        </div>
+			        <button type="submit" class="btn" id="contactbtn">Submit</button>
+			      </form>
+			    </div>
+
+			  </div>
+			</div>
+
+		</main>
+	</body>
+</html>

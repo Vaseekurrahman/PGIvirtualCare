@@ -1,0 +1,89 @@
+<html th:replace="~{Admin/Adminbase::layout(~{::main})}">
+	
+	<body>
+		<main>
+			
+			<main class="container my-5">
+
+			  <!-- Welcome Section -->
+			  <div class="text-center mb-5">
+			    <h2 class="fw-bold">🧑‍💼 Welcome, Deepak kumar</h2>
+			    <p class="text-muted">Here’s your dashboard summary</p>
+			  </div>
+
+			  <!-- Dashboard 3D Cards -->
+			  <div class="row g-4">
+
+			    <!-- Total Users -->
+			    <div class="col-md-4">
+			      <div class="card shadow-lg border-0 rounded-4 p-4 h-100 text-center">
+			        <img src="https://img.icons8.com/3d-fluency/94/group.png" alt="Users Icon" class="mb-3" width="64">
+			        <h5 class="card-title">Total Users</h5>
+			        <p class="display-6 fw-bold text-primary">1,250</p>
+			      </div>
+			    </div>
+
+			    <!-- Revenue -->
+			    <div class="col-md-4">
+			      <div class="card shadow-lg border-0 rounded-4 p-4 h-100 text-center">
+			        <img src="https://img.icons8.com/3d-fluency/94/money.png" alt="Revenue Icon" class="mb-3" width="64">
+			        <h5 class="card-title">Revenue</h5>
+			        <p class="display-6 fw-bold text-success">$58,300</p>
+			      </div>
+			    </div>
+
+			    <!-- Reports -->
+			    <div class="col-md-4">
+			      <div class="card shadow-lg border-0 rounded-4 p-4 h-100 text-center">
+			        <img src="https://img.icons8.com/3d-fluency/94/combo-chart--v1.png" alt="Reports Icon" class="mb-3" width="64">
+			        <h5 class="card-title">Reports</h5>
+			        <p class="display-6 fw-bold text-danger">12</p>
+			      </div>
+			    </div>
+			  </div>
+
+			  <!-- Recent Activity Table -->
+			  <div class="card mt-5 shadow-lg rounded-4">
+			    <div class="card-header bg-light border-0">
+			      <h5 class="mb-0">📊 Recent Activities</h5>
+			    </div>
+			    <div class="card-body p-0">
+			      <table class="table table-hover mb-0">
+			        <thead class="table-light">
+			          <tr>
+			            <th>Action</th>
+			            <th>User</th>
+			            <th>Time</th>
+			            <th>Status</th>
+			          </tr>
+			        </thead>
+			        <tbody>
+			          <tr>
+			            <td>Created new user</td>
+			            <td><img src="https://img.icons8.com/3d-fluency/48/user-male-circle.png" width="32"> Ali Raza</td>
+			            <td>08:45 AM</td>
+			            <td><span class="badge bg-success">Success</span></td>
+			          </tr>
+			          <tr>
+			            <td>Updated pricing</td>
+			            <td><img src="https://img.icons8.com/3d-fluency/48/user-female-circle.png" width="32"> Sarah Khan</td>
+			            <td>09:15 AM</td>
+			            <td><span class="badge bg-warning text-dark">Pending</span></td>
+			          </tr>
+			          <tr>
+			            <td>Deleted report</td>
+			            <td><img src="https://img.icons8.com/3d-fluency/48/user-male-circle.png" width="32"> John Doe</td>
+			            <td>10:00 AM</td>
+			            <td><span class="badge bg-danger">Removed</span></td>
+			          </tr>
+			        </tbody>
+			      </table>
+			    </div>
+			  </div>
+
+			</main>
+
+			
+		</main>
+	</body>
+</html>
