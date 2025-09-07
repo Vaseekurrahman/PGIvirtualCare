@@ -1,0 +1,57 @@
+<html th:replace="~{Admin/Adminbase::layout(~{::main})}">
+
+<body>
+	<main>
+		<div class="row">>
+			<div class="col-sm-12">
+				<div class="card">
+					<div class="card-header bg-primary text-white">
+						<h3 class="fw-bold text-center">
+							View and Manage Doctors
+						</h3>
+					</div>
+					<div class="card-body">
+						<div class="table-responsive">
+							<table class="table table-bordered">
+								<thead>
+									<tr>
+										<th>sr. No</th>
+										<th>Doctor's  Name</th>
+										<th>Age</th>
+										<th>Gender</th>
+										<th>Email</th>
+										<th>Contact No</th>
+										<th>Aadhar No</th>
+										<th>Address</th>
+										<th>Specialization</th>
+										<th>Action</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr th:each="d,srno:${doctorList}">
+										<td th:text="${srno.index+1}">#1</td>
+										<td th:text="${d.name}">ABCD</td>
+										<td th:text="${d.age}">ABCD</td>
+										<td th:text="${d.gender}">abc</td>
+										<td th:text="${d.email}">eaxample@gmail.com</td>
+										<td th:text="${d.contactNumber}">123454567</td>
+										<td th:text="${d.aadharNumber}">123456789012</td>
+										<td th:text="${d.address}">abc</td>
+										<td th:text="${d.specialization}">abc</td>
+										<td>
+											<a href="#" class="btn btn-success btn-sm">Edit</a>
+											<a th:href="@{Deletedoctor(id=${d.id})}"   onclick="return confirm('Are you sure want to delete?')"   class="btn btn-danger btn-sm">Delete</a>
+										</td>
+									</tr>
+
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+</body>
+
+</html>

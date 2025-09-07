@@ -1,0 +1,389 @@
+<html th:replace="~{base::layout(~{::main})}">
+	<body>
+		<main >
+		<!--crousel-->
+		<div id="carouselExampleCaptions" class="carousel slide">
+		  <div class="carousel-indicators">
+		    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+		    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+		    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+		  </div>
+
+		  <div class="carousel-inner">
+		    <!-- Slide 1 -->
+		    <div class="carousel-item active">
+		      <img src="images/crousal1.jpg" class="d-block w-100" alt="..." height="700px">
+		      <div class="carousel-caption d-none d-md-block px-2 px-md-4">
+		        <h5 class="fs-4 fs-md-3 fw-bold">Welcome to PGI Lucknow</h5>
+		        <p class="fs-6 fs-md-5">PGI Lucknow is a leading hospital providing specialized care, modern facilities, and expert doctors.</p>
+		      </div>
+		    </div>
+
+		    <!-- Slide 2 -->
+		    <div class="carousel-item">
+		      <img src="images/crousal2.jpg" class="d-block w-100" alt="..." height="700px">
+		      <div class="carousel-caption d-none d-md-block px-2 px-md-4">
+		        <h5 class="fs-4 fs-md-3 fw-bold">PGI – Advancing Health, Saving Lives</h5>
+		        <p class="fs-6 fs-md-5">A trusted center for super-specialty medical care with skilled professionals and advanced treatment options.</p>
+		      </div>
+		    </div>
+
+		    <!-- Slide 3 -->
+		    <div class="carousel-item">
+		      <img src="images/crousal3.jpg" class="d-block w-100" alt="..." height="700px">
+		      <div class="carousel-caption d-none d-md-block px-2 px-md-4">
+		        <h5 class="fs-4 fs-md-3 fw-bold">Excellence in Care & Innovation</h5>
+		        <p class="fs-6 fs-md-5">PGI Lucknow leads in medical innovation and education, offering quality treatment across specialties.</p>
+		      </div>
+		    </div>
+		  </div>
+
+		  <!-- Controls -->
+		  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+		    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		    <span class="visually-hidden">Previous</span>
+		  </button>
+		  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+		    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+		    <span class="visually-hidden">Next</span>
+		  </button>
+		</div>
+		<!--crousel-->
+			<!--about us-->
+			<div class="row">
+				<section class="about-section">
+				  <div class="container">
+				    <div class="row align-items-center g-5">
+				      <!-- Left: Image -->
+				      <div class="col-lg-6">
+				        <img src="images/about.jpg" alt="Doctors in surgery" class="img-fluid rounded">
+				      </div>
+
+				      <!-- Right: Text + Features -->
+				      <div class="col-lg-6">
+				        <p class="about-title">ABOUT US</p>
+				        <h2 class="about-heading">Best Medical Care For Yourself and Your Family</h2>
+				        <p class="about-text">
+				          PGI VirtualCare is a smart digital health solution designed to bridge patients with expert care online.
+				          With an intuitive interface and secure system, it offers virtual consultations, appointment scheduling,
+				          and access to medical records. Patients can connect with specialists, receive prescriptions, and monitor
+				          their health remotely. The platform ensures seamless communication between doctors and patients. VirtualCare
+				          empowers both urban and rural populations with accessible, efficient, and reliable healthcare services.
+				        </p>
+
+				        <!-- Features -->
+				        <div class="row text-center mt-4 gx-3 gy-3">
+				          <div class="col-6 col-md-3">
+				            <div class="feature-box">
+				              <i class="fas fa-user-md"></i>
+				              <h6>Qualified</h6> 
+				              <span>PGI Virtual Care</span>
+				            </div>
+				          </div>
+				          <div class="col-6 col-md-3">
+				            <div class="feature-box">
+				              <i class="fas fa-calendar-check"></i>
+				              <h6>Appointment</h6>
+				              <span>Book Services</span>
+				            </div>
+				          </div>
+				          <div class="col-6 col-md-3">
+				            <div class="feature-box">
+				              <i class="fas fa-vials"></i>
+				              <h6>Accurate</h6>
+				              <span>Testing</span>
+				            </div>
+				          </div>
+				          <div class="col-6 col-md-3">
+				            <div class="feature-box">
+				              <i class="fas fa-ambulance"></i>
+				              <h6>24x7 Support</h6>
+				              <span>Healthcare</span>
+				            </div>
+				          </div>
+				        </div>
+
+				      </div>
+				    </div>
+				  </div>
+				</section>
+			</div>
+		   <!--about us-->		
+		   <!--sevices section-->
+		   <div class="row">
+			<section class="services-section py-5">
+			    <div class="container text-center">
+			      <h6 class="fw-bold" id="serviceIndex">SERVICES</h6>
+			      <h2 class="fw-bold mb-5">Excellent Medical Services</h2>
+
+			      <div class="row g-4">
+			        <!-- Service 1 -->
+			        <div class="col-md-4">
+			          <div class="service-card p-4 shadow-sm h-100">
+			            <div class="icon-circle bg-primary mb-3 mx-auto">
+			              <img src="https://img.icons8.com/ios-filled/50/ffffff/doctor-male.png" alt="Consultation" />
+			            </div>
+			            <h5 class="fw-bold">Virtual Consultation</h5>
+			            <p>Connect with experienced doctors from the comfort of your home using our secure video calling platform.</p>
+			          </div>
+			        </div>
+
+			        <!-- Service 2 -->
+			        <div class="col-md-4">
+			          <div class="service-card p-4 shadow-sm h-100">
+			            <div class="icon-circle bg-success mb-3 mx-auto">
+			              <img src="https://img.icons8.com/ios-filled/50/ffffff/pill.png" alt="E-Prescription" />
+			            </div>
+			            <h5 class="fw-bold">E-Prescription</h5>
+			            <p>Doctors can issue digital prescriptions that patients can download or print anytime.</p>
+			          </div>
+			        </div>
+
+			        <!-- Service 3 -->
+			        <div class="col-md-4">
+			          <div class="service-card p-4 shadow-sm h-100">
+			            <div class="icon-circle bg-warning mb-3 mx-auto">
+			              <img src="https://img.icons8.com/ios-filled/50/ffffff/planner.png" alt="Appointment Booking" />
+			            </div>
+			            <h5 class="fw-bold">Appointment Booking</h5>
+			            <p>Schedule appointments with specialists quickly through our user-friendly interface.</p>
+			          </div>
+			        </div>
+
+			        <!-- Service 4 -->
+			        <div class="col-md-4">
+			          <div class="service-card p-4 shadow-sm h-100">
+			            <div class="icon-circle bg-info mb-3 mx-auto">
+			              <img src="https://img.icons8.com/ios-filled/50/ffffff/documents.png" alt="Medical Reports" />
+			            </div>
+			            <h5 class="fw-bold">Medical Report Management</h5>
+			            <p>Upload, view and manage your medical history and lab reports safely and securely.</p>
+			          </div>
+			        </div>
+
+			        <!-- Service 5 -->
+			        <div class="col-md-4">
+			          <div class="service-card p-4 shadow-sm h-100">
+			            <div class="icon-circle bg-danger mb-3 mx-auto">
+			              <img src="https://img.icons8.com/ios-filled/50/ffffff/headphones.png" alt="24x7 Support" />
+			            </div>
+			            <h5 class="fw-bold">24x7 Support</h5>
+			            <p>Need help? Our team is available round the clock to assist you with any queries or emergencies.</p>
+			          </div>
+			        </div>
+
+			        <!-- Service 6 -->
+			        <div class="col-md-4">
+			          <div class="service-card p-4 shadow-sm h-100">
+			            <div class="icon-circle bg-secondary mb-3 mx-auto">
+			              <img src="https://img.icons8.com/ios-filled/50/ffffff/privacy.png" alt="Secure Communication" />
+			            </div>
+			            <h5 class="fw-bold">Secure Communication</h5>
+			            <p>All patient-doctor communications are encrypted to ensure maximum privacy and security.</p>
+			          </div>
+			        </div>
+			      </div>
+			    </div>
+			  </section>
+           </div>
+		   <!--sevices section-->
+		   <!--appointment section-->
+		   <div class="row" id="appointment">
+			<section class="appointment-section py-5">
+			    <div class="container">
+			      <div class="row align-items-center">
+			        <!-- Left Side -->
+			        <div class="col-lg-6 mb-4">
+			          <div class="text-white">
+			            <h6 class="text-uppercase fw-bold text-decoration-underline">Appointment</h6>
+			            <h2 class="fw-bold">Make An Appointment For Your Family</h2>
+			            <p class="mt-3">
+			              Booking an appointment with PGI VirtualCare is quick, simple, and secure.
+			              Patients can select their preferred doctor, and confirm with just a few taps.
+			              Flexible scheduling options make it easy to reschedule or cancel if needed.
+			              VirtualCare makes healthcare efficient and accessible anytime.
+			            </p>
+			            <div class="mt-4">
+			              <a href="#" class="btn btn-dark rounded-pill px-4 me-2">Go To Login</a>
+			              <a href="#" class="btn btn-outline-light rounded-pill px-4">Read More</a>
+			            </div>
+			          </div>
+			        </div>
+
+			        <!-- Right Side (Form) -->
+			        <div class="col-lg-6">
+			          <div class="card p-4 shadow-sm rounded-4">
+			            <h5 class="fw-bold text-center mb-4">Book An Appointment</h5>
+			            <form>
+			              <div class="row mb-3">
+			                <div class="col-md-6 mb-3 mb-md-0">
+			                  <select class="form-select" required>
+			                    <option selected disabled>Choose Department</option>
+			                    <option>Cardiology</option>
+			                    <option>Neurology</option>
+			                    <option>Orthopedics</option>
+			                  </select>
+			                </div>
+			                <div class="col-md-6">
+			                  <select class="form-select" required>
+			                    <option selected disabled>Select Doctor</option>
+			                    <option>Dr. Singh</option>
+			                    <option>Dr. Mehta</option>
+			                    <option>Dr. Verma</option>
+			                  </select>
+			                </div>
+			              </div>
+
+			              <div class="row mb-3">
+			                <div class="col-md-6 mb-3 mb-md-0">
+			                  <input type="date" class="form-control" required />
+			                </div>
+			                <div class="col-md-6">
+			                  <input type="time" class="form-control" required />
+			                </div>
+			              </div>
+
+			              <div class="mb-3">
+			                <label class="form-label d-block">Have you medical report?</label>
+			                <div>
+			                  <div class="form-check form-check-inline">
+			                    <input class="form-check-input" type="radio" name="report" id="yes" value="yes">
+			                    <label class="form-check-label text-dark" for="yes">Yes</label>
+			                  </div>
+			                  <div class="form-check form-check-inline">
+			                    <input  class="form-check-input" type="radio" name="report" id="no" value="no">
+			                    <label class="form-check-label " for="no">No</label>
+			                  </div>
+			                </div>
+			              </div>
+
+			              <div class="d-grid">
+			                <button type="submit" class="btn btn-dark text-white fw-semibold">Make An Appointment</button>
+			              </div>
+			            </form>
+			          </div>
+			        </div>
+			      </div>
+			    </div>
+			  </section>
+            </div>
+		   <!--appointment section-->
+		   <!--why choose us-->
+		   <div class="row" id="whychoose">
+			<section class="why-choose-us text-center text-white py-5">
+			    <div class="container">
+			      <h6 class="text-uppercase fw-bold small-heading">PGI VIRTUALCARE</h6>
+			      <h2 class="fw-bold mb-3">
+			        <i class="bi bi-globe2 me-2"></i> Why Choose PGI VirtualCare?
+			      </h2>
+			      <p class="mb-5">
+			        PGI VirtualCare is your trusted partner in digital healthcare, designed to make medical consultations
+			        accessible, convenient, and secure. With a user-friendly interface and expert-backed services, patients
+			        can connect with top doctors from the comfort of their homes. Whether it's a routine check-up or specialist
+			        consultation, our platform offers reliable healthcare anytime, anywhere.
+			      </p>
+
+			      <div class="bg-light text-dark rounded shadow-lg p-4">
+			        <h4 class="mb-4 fw-bold"><span class="text-success">&#x2705;</span> Key Features</h4>
+			        <div class="row text-start">
+			          <div class="col-md-6">
+			            <ul class="list-unstyled">
+			              <li class="mb-3"><i class="bi bi-check2-circle text-dark me-2"></i>Instant access to qualified doctors across multiple specialties</li>
+			              <li class="mb-3"><i class="bi bi-check2-circle text-dark me-2"></i>Secure video consultations with detailed digital prescriptions</li>
+			              <li class="mb-3"><i class="bi bi-check2-circle  text-dark me-2"></i>24/7 availability for emergency and follow-up consultations</li>
+			            </ul>
+			          </div>
+			          <div class="col-md-6">
+			            <ul class="list-unstyled">
+			              <li class="mb-3"><i class="bi bi-check2-circle text-dark me-2"></i>Hassle-free online appointment scheduling and rescheduling</li>
+			              <li class="mb-3"><i class="bi bi-check2-circle text-dark me-2"></i>Safe and encrypted storage of patient medical records</li>
+			              <li class="mb-3"><i class="bi bi-check2-circle text-dark me-2"></i>User-friendly platform accessible on desktop and mobile devices</li>
+			            </ul>
+			          </div>
+			        </div>
+			      </div>
+			    </div>
+			  </section>
+		  </div>
+		   <!--why choose us-->
+		   <!--Blogs-->
+		   <div class="row">
+			<section class="py-5 bg-light">
+			  <div class="container">
+			    <div class="text-center mb-5">
+			      <p class=" fw-semibold" style="color:#41B7A6; font-size:25px;">BLOG POST</p>
+			      <h2 class="fw-bold">Our Latest Medical Blog Posts</h2>
+			    </div>
+			    <div class="row g-4">
+			      
+			      <!-- Card 1 -->
+			      <div class="col-md-6 col-lg-4">
+			        <div class="card blog-card h-100 shadow-sm">
+			          <img src="images/blog-1.jpg" class="card-img-top" alt="Virtual Consultations">
+			          <div class="card-body">
+			            <h5 class="card-title fw-bold">The Future of Healthcare: Embracing Virtual Consultations</h5>
+			            <p class="card-text text-muted">Explore how virtual consultations are transforming patient care by providing easy access to doctors from the comfort of your home. Learn about the benefits, challenges, and how PGI Virtual Care is leading the change.</p>
+			          </div>
+			          <div class="card-footer d-flex justify-content-between align-items-center bg-white">
+			            <div class="d-flex align-items-center">
+			              <img src="images/blogAuthor.jpg" class="rounded-circle me-2" alt="Author" height="20px" width="20px">
+			              <small class="text-muted">Deepak kumar</small>
+			            </div>
+			            <div class="text-muted">
+			              <i class="fas fa-eye me-1"></i>12345
+			              <i class="fas fa-comment ms-3 me-1"></i>123
+			            </div>
+			          </div>
+			        </div>
+			      </div>
+
+			      <!-- Card 2 -->
+			      <div class="col-md-6 col-lg-4">
+			        <div class="card blog-card h-100 shadow-sm">
+			          <img src="images/blog-2.jpg" class="card-img-top" alt="Health Checkups">
+			          <div class="card-body">
+			            <h5 class="card-title fw-bold">Why Regular Health Checkups Are More Important Than Ever</h5>
+			            <p class="card-text text-muted">Preventive care can save lives! Discover how scheduling regular checkups through online platforms can help detect early signs of illness and ensure long-term well-being.</p>
+			          </div>
+			          <div class="card-footer d-flex justify-content-between align-items-center bg-white">
+			            <div class="d-flex align-items-center">
+			              <img src="images/blogAuthor.jpg" class="rounded-circle me-2" alt="Author" height="20px" width="20px">
+			              <small class="text-muted">Krishna Raj</small>
+			            </div>
+			            <div class="text-muted">
+			              <i class="fas fa-eye me-1"></i>12345
+			              <i class="fas fa-comment ms-3 me-1"></i>123
+			            </div>
+			          </div>
+			        </div>
+			      </div>
+
+			      <!-- Card 3 -->
+			      <div class="col-md-6 col-lg-4">
+			        <div class="card blog-card h-100 shadow-sm">
+			          <img src="images/blog-3.jpg" class="card-img-top" alt="Health Tips">
+			          <div class="card-body">
+			            <h5 class="card-title fw-bold">Top 5 Health Tips for a Better Lifestyle in the Digital Age</h5>
+			            <p class="card-text text-muted">Staying healthy in today’s fast-paced life requires small yet impactful changes. From digital fitness tools to healthy diet hacks, read our top tips for a healthier you — powered by virtual healthcare support.</p>
+			          </div>
+			          <div class="card-footer d-flex justify-content-between align-items-center bg-white">
+			            <div class="d-flex align-items-center">
+			              <img src="images/blogAuthor.jpg" class="rounded-circle me-2" alt="Author" height="20px" width="20px">
+			              <small class="text-muted">Kishan Kumar</small>
+			            </div>
+			            <div class="text-muted">
+			              <i class="fas fa-eye me-1"></i>12345
+			              <i class="fas fa-comment ms-3 me-1"></i>123
+			            </div>
+			          </div>
+			        </div>
+			      </div>
+
+			    </div>
+			  </div>
+			</section>
+		</div>
+		   <!--Blogs-->
+		</main>
+	</body>
+</html>
