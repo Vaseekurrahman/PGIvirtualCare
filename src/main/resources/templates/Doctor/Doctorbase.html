@@ -59,7 +59,7 @@
 										<div class="u-text">
 											<h4 th:text="${session.loggedInDoctor.name}"></h4>
 											<p class="text-muted" th:text="${session.loggedInDoctor.email}">
-												business@Agritrade.in</p>
+												Medical@care.in</p>
 											<a href="ViewProfile" class="btn btn-rounded btn-danger btn-sm">View
 												Profile</a>
 										</div>
@@ -102,18 +102,18 @@
 				</div>
 				<ul class="nav">
 					<li class="nav-item" th:classappend="${active1}">
-						<a href="AdminDashboard">
+						<a href="DoctorDashboard">
 							<i class="la la-dashboard"></i>
 							<p>Dashboard</p>
 							<span class="badge badge-count"></span>
 						</a>
 					<li class="nav-item" th:classappend="${active3}">
-						<a href="ManagePatients">
+						<a href="ManagePatient">
 							<i class="la la-user-plus"></i>
 							<p>Manage Patients</p>
 						</a>
 					</li>
-
+                   
 					<li class="nav-item" th:classappend="${active4}">
 						<a href="ViewAppointments">
 							<i class="la la-fonticons"></i>
@@ -123,7 +123,7 @@
 
 
 					<li class="nav-item" th:classappend="${active5}">
-						<a href="ManagePrescriptions">
+						<a href="WritePrescription">
 							<i class="la la-bell"></i>
 							<p>Manage Prescriptions</p>
 							<!-- <span class="badge badge-success">3</span> -->
@@ -131,7 +131,7 @@
 					</li>
 
 					<li class="nav-item" th:classappend="${active6}">
-						<a href="ManageMedicalReports">
+						<a href="MedicalReport">
 							<i class="la la-hospital-o"></i>
 							<p>Medical Reports</p>
 						</a>
@@ -139,14 +139,14 @@
 
 
 					<li class="nav-item" th:classappend="${active7}">
-						<a href="Enquiry">
+						<a href="ChangePassword">
 							<i class="la la-bullhorn"></i>
 							<p>Change Password</p>
 							<!-- <span class="badge badge-success">3</span> -->
 						</a>
 					</li>
 					<li class="nav-item" th:classappend="${active7}">
-						<a href="Enquiry">
+						<a href="Logout">
 							<i class="la la-bullhorn"></i>
 							<p>Logout</p>
 							<!-- <span class="badge badge-success">3</span> -->
@@ -178,7 +178,7 @@
 					</nav>
 					<div class="copyright ml-auto">
 						2025, made with <i class="la la-heart heart text-danger"></i> by <a
-							href="https://www.instagram.com/lucky_agency_4149" target="_blank">Deepak kumar</a>
+							href="https://www.instagram.com/lucky_agency_4149" target="_blank">Vasikur Rahman</a>
 					</div>
 				</div>
 			</footer>

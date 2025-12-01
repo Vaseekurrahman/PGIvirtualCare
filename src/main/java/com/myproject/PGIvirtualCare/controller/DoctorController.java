@@ -32,15 +32,13 @@ public class DoctorController {
 
 	@Autowired
 	private UserRepository userRepo;
-	
+
 	@Autowired
 	private AppointmentRepository appointmentRepo;
-	
+
 	@Autowired
 	private PrescriptionRepository prescriptionRepo;
-    
-	
-	
+
 	@GetMapping("/DoctorDashboard")
 	public String showDoctorDashboard() {
 
@@ -49,13 +47,19 @@ public class DoctorController {
 		}
 		return "Doctor/DoctorDashboard";
 	}
-	
-	
-	
-	
-	
-	//View Profile
-	
+
+	@GetMapping("/MedicalReport")
+	public String showManageMedicalReports() {
+//		if (session.getAttribute("loggedInAdmin") == null) {
+//
+//			return "redirect:/DoctorLogin";
+//		}
+		return "Doctor/MedicalReport";
+
+	}
+
+	// View Profile
+
 	@GetMapping("ViewProfile")
 	public String showViewProfile() {
 
@@ -63,6 +67,11 @@ public class DoctorController {
 			return "redirect:/Doctor";
 		}
 		return "Doctor/ViewProfile";
+	}
+
+	@GetMapping("/ManagePatient")
+	public String ShowDoctoerManagePatient() {
+		return "Doctor/ManagePatient";
 	}
 
 	// -------------logout--------------
@@ -80,6 +89,7 @@ public class DoctorController {
 		if (session.getAttribute("loggedInDoctor") == null) {
 			return "redirect:/DoctorLogin";
 		}
+
 		return "Doctor/ChangePassword";
 	}
 
@@ -133,47 +143,48 @@ public class DoctorController {
 
 		return "Doctor/ViewAppointments";
 	}
-	 
-	
-	//-----WritePrescription
-	
-	@GetMapping("/WritePrescription")
-	public String showWritePrescription(@RequestParam("id") long id,Model model) {
 
-		if (session.getAttribute("loggedInDoctor") == null) {
-			return "redirect:/Doctor";
-		}
-		
-		Appointment appointment=appointmentRepo.findById(id).get();
-		model.addAttribute("appointment",appointment);
-		
-		Prescription prescription=new Prescription();
-		model.addAttribute("prescription",prescription);
-		
-		
+	// -----WritePrescription
+
+	@GetMapping("/WritePrescription")
+	public String ShowWritePrescription(@RequestParam("appointmentId") long appointmentId, Model model) {
+
+		Appointment appointment = appointmentRepo.findById(appointmentId).get();
+		model.addAttribute("appointment", appointment);
+		model.addAttribute("prescription", new Prescription());
+
 		return "Doctor/WritePrescription";
 	}
-	
+
 	@PostMapping("/WritePrescription")
-	public String WritePrescription(@ModelAttribute Prescription prescription,RedirectAttributes attributes,@RequestParam("appointmentId") long appointmentId)
-	{
+	public String WritePrescription(@ModelAttribute Prescription prescription, RedirectAttributes attributes,
+			@RequestParam("appointmentId") Long appointmentId) {
 		try {
-			
-			
-			Appointment appointment =appointmentRepo.findById(appointmentId).get();
-			
+			Appointment appointment = appointmentRepo.findById(appointmentId).orElse(null);
 			prescription.setAppointment(appointment);
-			
 			prescription.setPrescriptionDate(LocalDateTime.now());
+
 			prescriptionRepo.save(prescription);
-			attributes.addFlashAttribute("msg","Prescription successfully submited");
-			
-			
+
+			attributes.addFlashAttribute("msg", "Prescription Successfully Submitted");
+
 			return "redirect:/Doctor/ViewAppointments";
-		}
-		catch (Exception e) {
-			attributes.addFlashAttribute("msg", e.getMessage());
-			return "redirect:/Doctor/WritePrescription?id='+appointmentId'";
+
+		} catch (Exception e) {
+			attributes.addFlashAttribute("msg", "Error: " + e.getMessage());
+
+			return "redirect:/Doctor/WritePrescription?appointmentId=" + appointmentId;
+
 		}
 	}
+
+	@GetMapping("/EditProfile")
+	public String showEditProfile() {
+		if (session.getAttribute("loggedInDoctor") == null) {
+			return "redirect:/DoctorLogin";
+		}
+
+		return "Doctor/EditProfile";
+	}
+
 }

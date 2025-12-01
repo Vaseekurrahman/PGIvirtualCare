@@ -1,64 +1,90 @@
 <html th:replace="~{Doctor/Doctorbase::layout(~{::main})}">
 
-<body>
-	<main>
-		<div class="row">
-			<div class="col-sm-11 mx-auto">
-				<div class="card">
-					<div class="card-header bg-primary">
-						<div class="row">
-							<div class="col-sm-6">
-								<h4 class="m-0 text-light fw-bold">View Appointment</h4>
-							</div>
-							<div class="col-sm-6 text-right">
-								<a href="DoctorDashboard" class="btn btn-light text-dark">Back To Dashboard</a>
-							</div>
-						</div>
-					</div>
-					<div class="card-body">
-						<div class="table-responsive">
-							<table class="table table-bordered">
-								<thead>
-									<tr>
-										<th>Sr. No</th>
-										<th>Patient Name</th>
-										<th>Patient ContactNo</th>
-										<th>Department</th>
-										<th>Date & Time</th>
-										<th>Symtomps</th>
-										<th>Booked At</th>
-										<th>Status</th>
-										<th>Action</th>
-									</tr>
+    <body>
+        <main>
+            <div class="row">
+                <div class="col-sm-11 mx-auto">
+                    <div class="card">
+                        <div class="card-header bg-primary">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <h4 class="m-0 text-light fw-bold">View
+                                        Appointment</h4>
+                                </div>
+                                <div class="col-sm-6 text-right">
+                                    <a
+                                        href="DoctorDashboard"
+                                        class="btn btn-light text-dark"
+                                    >Back To Dashboard</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Sr. No</th>
+                                            <th>Patient Name</th>
+                                            <th>Patient ContactNo</th>
+                                            <th>Department</th>
+                                            <th>Date & Time</th>
+                                            <th>Symtomps</th>
+                                            <th>Booked At</th>
+                                            <th>Status</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr
+                                            th:each="apt, srno : ${appointments}">
+                                            <td th:text="${srno.index + 1}">
+                                            </td>
+                                            <td th:text="${apt.patient.name}">
+                                            </td>
+                                            <td
+                                                th:text="${apt.patient.contactNumber}">
+                                            </td>
+                                            <td th:text="${apt.department}">
+                                            </td>
+                                            <td
+                                                th:text="${apt.date + ' ['+ apt.time + ']'} ">
+                                            </td>
+                                            <td th:text="${apt.symtomps}"></td>
+                                            <td th:text="${apt.bookedAt}"></td>
+                                            <td
+                                                th:text="${apt.status}"
+                                                class="fw-bold"
+                                            ></td>
+                                            <td class="text-center">
+                                                <a
+                                                    href="#"
+                                                    th:if="${apt.status.name()=='PENDING'}"
+                                                    class="btn btn-success btn-sm"
+                                                >Approved</a>
+                                                <a
+                                                    href="#"
+                                                    th:if="${apt.status.name()=='PENDING'}"
+                                                    class="btn btn-danger btn-sm"
+                                                >Cancel</a>
+                                                <a th:href="@{/Doctor/WritePrescription(appointmentId=${apt.id})}"
+                                                   class="btn btn-primary">
+                                                   Write Prescription
+                                                </a>
 
-								</thead>
-								<tbody>
-									<tr th:each="apt, srno : ${appointments}">
-										<td th:text="${srno.index + 1}"></td>
-										<td th:text="${apt.patient.name}"></td>
-										<td th:text="${apt.patient.contactNumber}"></td>
-										<td th:text="${apt.department}"></td>
-										<td th:text="${apt.date + ' ['+ apt.time + ']'} "></td>
-										<td th:text="${apt.symtomps}"></td>
-										<td th:text="${apt.bookedAt}"></td>
-										<td th:text="${apt.status}" class="fw-bold"></td>
-										<td class="text-center">
-											<a href="#"   th:if="${apt.status.name()=='PENDING'}" class="btn btn-success btn-sm">Approved</a>
-											<a href="#"  th:if="${apt.status.name()=='PENDING'}" class="btn btn-danger btn-sm">Cancel</a>
-											<a th:href="@{WritePrescription(id=${apt.id})}"  th:if="${apt.status.name()=='PENDING'}" class="btn btn-info btn-sm">Write Prescription</a>
-											<span th:if="${apt.status.name()=='REJECTED'}">❌</span>
-										</td>
-									</tr>
-
-								</tbody>
-
-							</table>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</main>
-</body>
+                                                <span
+                                                    th:if="${apt.status.name()=='REJECTED'}"
+                                                >❌</span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
 
 </html>

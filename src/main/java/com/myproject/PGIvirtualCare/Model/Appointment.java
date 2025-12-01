@@ -4,7 +4,6 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -21,29 +20,27 @@ public class Appointment {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+
 	private long id;
-	
+
 	@ManyToOne
 	private Users patient;
-	
+
 	@ManyToOne
 	private Users doctor;
 	private String department;
 	private LocalDate date;
 	private LocalTime time;
 	private LocalDateTime bookedAt;
-	
-	@Column(length =1000)
+
+	@Column(length = 1000)
 	private String symtomps;
-	
+
 	@Enumerated(EnumType.STRING)
 	private AppointmentStatus status;
-	
-	public enum AppointmentStatus{
-		PENDING,
-		APPROVED,
-		REJECTED,
-		RESCHEDULED
+
+	public enum AppointmentStatus {
+		PENDING, APPROVED, REJECTED, RESCHEDULED
 	}
 
 	public long getId() {
@@ -117,5 +114,5 @@ public class Appointment {
 	public void setStatus(AppointmentStatus status) {
 		this.status = status;
 	}
-	
+
 }

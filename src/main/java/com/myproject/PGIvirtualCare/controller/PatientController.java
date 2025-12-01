@@ -43,9 +43,8 @@ public class PatientController {
 		}
 		return "Patient/PatientDashboard";
 	}
-	
-	
-	//View Profile
+
+	// View Profile
 	@GetMapping("/ViewProfile")
 	public String showViewProfile() {
 
@@ -54,9 +53,8 @@ public class PatientController {
 		}
 		return "Patient/ViewProfile";
 	}
-	
-	
-	//--------Book Appointment
+
+	// --------Book Appointment
 
 	@GetMapping("/BookAppointment")
 	public String showBookAppointment(Model model, HttpSession session) {
@@ -117,8 +115,6 @@ public class PatientController {
 		return "Patient/ViewAppointment";
 	}
 
-	
-	
 	// -----------change password--------------
 
 	@GetMapping("/ChangePassword")
@@ -161,6 +157,15 @@ public class PatientController {
 
 		}
 
+	}
+
+	@GetMapping("/EditProfile")
+	public String showEditProfile() {
+		if (session.getAttribute("loggedInPatient") == null) {
+			return "redirect:/PatientLogin";
+		}
+
+		return "Patient/EditProfile";
 	}
 
 }

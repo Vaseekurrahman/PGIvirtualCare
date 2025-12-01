@@ -40,7 +40,10 @@
 										<td th:text="${d.specialization}">abc</td>
 										<td>
 											<a href="#" class="btn btn-success btn-sm">Edit</a>
-											<a th:href="@{Deletedoctor(id=${d.id})}"   onclick="return confirm('Are you sure want to delete?')"   class="btn btn-danger btn-sm">Delete</a>
+                                            <a th:href="@{/Admin/deletedoctor(id=${d.id})}" 
+                                               onclick="return confirm('Are you sure to delete this doctor?')" 
+                                               class="btn btn-danger">Delete</a>
+
 										</td>
 									</tr>
 
