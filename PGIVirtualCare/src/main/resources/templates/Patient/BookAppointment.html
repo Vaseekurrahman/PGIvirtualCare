@@ -1,0 +1,66 @@
+<html th:replace="~{Patient/Patientbase::layout(~{::main})}">
+
+<body>
+	<main>
+		<div class="row">
+			<div class="col-sm-10 mx-auto">
+				<div class="card">
+					<div class="card-header bg-primary">
+						<h3 class="m-0 text-center text-white">Booked Appointment</h3>
+					</div>
+
+					<div class="card-body">
+						<form method="post" th:object="${appointment}">
+							<div class="row p-lg-5 p-2">
+							<!--	<div class="col-sm-6 mb-4">
+									<label>Select Department</label>
+									<select class="form-control" th:field="${appointment.department}"
+										required="required">
+										<option value="" class="fw-bold">--Select Department</option>
+										<option value="Cardiology">Cardiology</option>
+										<option value="Neurology">Neurology</option>
+										<option value="Orthopedics">Orthopedics</option>
+										<option value="Pediatrics">Pediatrics</option>
+										<option value="Dermatology">Dermatology</option>
+										<option value="General Medicine">General Medicine</option>
+										<option value="Gynecology">Gynecology</option>
+									</select>
+								</div>-->
+
+								<div class="col-sm-12 mb-4">
+									<label class="fw-bold">Select Doctors</label>
+									<select class="form-control" th:field="${appointment.doctor}">
+										<option value="">--Select Doctor--</option>
+										<option th:each="doctor : ${doctorList}" th:value="${doctor.id}"
+											th:text="${doctor.name +' - '+doctor.specialization}"></option>
+									</select>
+								</div>
+
+								<div class="col-sm-6 mb-4">
+									<label class="fw-bold">Select date</label>
+									<input type="date" class="form-control" th:field="${appointment.date}"
+										required="required">
+								</div>
+								<div class="col-sm-6 mb-4">
+									<label class="fw-bold">Select time</label>
+									<input type="time" class="form-control" th:field="${appointment.time}"
+										required="required">
+								</div>
+								<div class="col-sm-12 mb-4">
+									<label>Write Symptoms Here</label>
+									<textarea rows="2" cols="" class="form-control" th:field="${appointment.symtomps}"
+										placeholder="write symptoms"></textarea>
+								</div>
+								<div class="col-sm-12 text-center">
+									<button type="submit" class="btn btn-primary mt-3">Book Appointment</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+</body>
+
+</html>

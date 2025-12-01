@@ -1,0 +1,67 @@
+<html th:replace="~{base::layout(~{::main})}">
+	<body>
+		<main >
+		<div class="row"  style="background-image:url('images/registration.jpg');">
+			<div class="col-sm-12 bg-dark pt-5  bg-opacity-50 ">
+				<h1 class="py-5 mt-5 text-center text-light fw-bold display-4">Patient Registration</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-9 mt-4 mx-auto shadow p-4 px-5">
+				<input type="hidden" id="msg" th:if="${msg}" th:value="${msg}">
+				<form  method="post" th:object="${userDto}">
+				<div class="row py-5">
+					<div class="col-sm-6">
+						<label class="fw-bold">Enter your Name</label>
+						<input th:field="${userDto.name}" type="text" placeholder="patient Name" class="form-control" required="required">
+					</div>
+					<div class="col-sm-6 mb-4 ">
+						<label class="fw-bold">Select Your Gender</label>
+						<select  th:field="${userDto.gender}"class="form-control">
+							<option value="Male">Male</option>
+							<option value="Female">Female</option>
+							<option value="Other">Other</option>
+						</select>
+					</div>
+				<div class="col-sm-6  mb-4">
+					<label class="fw-bold">Enter your Age</label>
+					<input th:field="${userDto.age}" type="number" class="form-control" placeholder="Patient Age">
+				</div>
+				<div class="col-sm-6  mb-4">
+					<label class="fw-bold">Enter Contact Number</label>
+					<input th:field="${userDto.contactNumber}" type="text" maxlength="10" pattern="\d{10}" class="form-control" placeholder="Contact Number">
+				</div>
+				<div class="col-sm-6 mb-4">
+					<label class="fw-bold">Enter Aadhar Number</label>
+					<input th:field="${userDto.aadharNumber}" type="number" class="form-control" required="required" placeholder="Patient Aadhar Number">
+				</div>
+				<div class="col-sm-6 mb-4">
+					<label class="fw-bold">Enter Your Email</label>
+					<input th:field="${userDto.email}" type="email" class="form-control" placeholder="Patient Email" required="required">
+				</div>
+				<div class="col-sm-6 mb-4">
+					<label class="fw-bold">Enter Password</label>
+					<input th:field="${userDto.password}" type="password" class="form-control" placeholder="Password" required="required">
+				</div>
+				<div class="col-sm-6 mb-4">
+				   <label class="fw-bold">Enter Address</label>
+				   <textarea th:field="${userDto.address}" rows="1" class="form-control" placeholder="Enter Adress" required="required"></textarea>
+				</div>
+				<div class="col-sm-12 mt-4 text-center">
+				   <button type="submit" class="btn btn-info px-5">Register</button>
+				</div>
+				</div>
+				</form>
+		</div>
+		</div>
+		<script type="text/javascript">
+			var msg = document.getElementById("msg");
+			if(msg.value!="")
+			{
+				alert(msg.value);
+			}
+			
+		</script>
+		</main>
+	</body>
+</html>
