@@ -1,0 +1,82 @@
+<html th:replace="~{base::layout(~{::main})}">
+
+    <body>
+        <main>
+            <div class="row">
+                <div
+                    class="col-sm-12  py-5 mt-5"
+                    style="background-color:#41B7A6;color:black"
+                >
+                    <h1 class="text-center pt-5 fw-bold">Admin Login</h1>
+                </div>
+            </div>
+            <div class="row py-5">
+                <div class="col-sm-5 mx-auto">
+                    <div
+                        th:if="${msg}"
+                        class=" alert alert-danger alert-dismissible fade show"
+                        role="alert"
+                    >
+                        <span th:text="${msg}"></span>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="alert"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <div
+                        class="container-fluid d-flex justify-content-center align-items-center">
+                        <div class="col-md-8">
+                            <div class="card shadow">
+                                <div class="card-body p-4">
+                                    <h3 class="text-center mb-4">Admin Login
+                                    </h3>
+                                    <form
+                                        action="/AdminLogin"
+                                        method="post"
+                                    >
+                                        <div class="mb-3">
+                                            <label class="form-label">Email /
+                                                Username</label>
+                                            <input
+                                                type="text"
+                                                name="email"
+                                               
+                                                required="required"
+                                                class="form-control"
+                                                placeholder="Enter username"
+                                            >
+                                        </div>
+                                        <div class="mb-3">
+                                            <label
+                                                class="form-label">Password</label>
+                                            <input
+                                                type="password"
+                                                name="password"
+                                                required="required"
+                                                class="form-control"
+                                                placeholder="Enter password"
+                                            >
+                                        </div>
+                                        <button
+                                            class="btn btn-primary w-100"
+                                            style="background-color:#41B7A6"
+                                        >Login</button>
+                                        <div class="text-center mt-3">
+                                            <a
+                                                href="#"
+                                                class="text-decoration-none"
+                                            >Forgot password?</a>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+
+</html>

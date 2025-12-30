@@ -1,0 +1,64 @@
+<html th:replace="~{Admin/Adminbase::layout(~{::main})}">
+	
+	<body>
+		<main>
+			<div class="row">>
+			<div class="col-sm-12">
+				<div class="card">
+					<div class="card-header bg-primary text-white">
+						<h3 class="fw-bold text-center">
+						   Manage Patient
+						</h3>
+					</div>
+					<div class="card-body">
+						<div class="table-responsive">
+							<table class="table table-bordered" id="example">
+								<thead>
+									<tr >
+										<th>sr. No</th>
+										<th>Profile Pic</th>
+										<th>Patient Name</th>
+										<th>Age</th>
+										<th>Gender</th>
+										<th>Email</th>
+										<th>Contact No</th>
+										<th>Aadhar No</th>
+										<th>Address</th>
+										<th>Reg.Date</th>
+										<th>Status</th>
+										<th>Action</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr th:each="p,srno:${patientList}">
+									<td   class="text-center"      th:text="${srno.index+1}"></td>
+									<td>@</td>
+									<td th:text="${p.name}">ABCD</td>
+									<td th:text="${p.age}">34</td>
+									<td th:text="${p.gender}">abc</td>
+									<td th:text="${p.email}">eaxample@gmail.com</td>
+									<td th:text="${p.contactNumber}">123454567</td>
+									<td th:text="${p.aadharNumber}">123456789012</td>
+									<td th:text="${p.address}">unknown address</td>
+									<td th:text="${p.regDate}">DD/MM/YYYY</td>
+									<td>
+										<a th:href="@{PatientStatus(id=${p.id})}" th:if="${p.status.name() == 'PENDING'}" class="btn btn-warning btn-sm" th:text="${p.status}"></a>
+										<a th:href="@{PatientStatus(id=${p.id})}" th:if="${p.status.name() == 'APPROVED'}" class="btn btn-success btn-sm" th:text="${p.status}"></a>
+										<a th:href="@{PatientStatus(id=${p.id})}" th:if="${p.status.name() == 'DISABLE'}" class="btn btn-danger btn-sm" th:text="${p.status}"></a>
+
+									</td>
+									<td>
+										<a href="#" class="btn btn-success btn-sm">Edit</a>
+										<a th:href="@{DeletePatient(id=${p.id})}"   onclick="return confirm('Are you sure want to delete?')"   class="btn btn-danger btn-sm">Delete</a>
+									</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+			</div>
+		</main>
+	</body>
+</html>

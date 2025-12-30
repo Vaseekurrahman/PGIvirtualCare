@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" th:fragment="layout(content)">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<title>Admin-PGI virual care</title>
+<meta
+	content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
+	name='viewport' />
+<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+<!--Data Table CSS  -->
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.6.1/css/buttons.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/2.1.3/css/dataTables.bootstrap5.css" />
+
+<link rel="stylesheet" href="../assets/css/ready.css">
+<link rel="stylesheet" href="../assets/css/demo.css">
+<link rel="stylesheet" href="../css/table.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+<style type="text/css">
+	td, th{
+ 		white-space: nowrap !important;
+ 	}
+</style>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="main-header">
+			<div class="logo-header text-center">
+				<a href="dashboard" class="logo"> PGI VirtualCare </a>
+				<button class="navbar-toggler sidenav-toggler ml-auto" type="button"
+					data-toggle="collapse" data-target="collapse"
+					aria-controls="sidebar" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<button class="topbar-toggler more">
+					<i class="la la-ellipsis-v"></i>
+				</button>
+			</div>
+			<nav class="navbar navbar-header navbar-expand-lg">
+				<div class="container-fluid">
+
+					<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
+						<li class="nav-item dropdown">
+							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false"> 
+							<img src="../assets/img/profile.jpg" alt="user-img" width="36" class="img-circle">
+							<span th:text="${session.loggedInPatient.name}"></span>
+						</a>
+							<ul class="dropdown-menu dropdown-user">
+								<li>
+									<div class="user-box">
+										<div class="u-img">
+											<img src="../assets/img/profile.jpg" alt="user">
+										</div>
+										<div class="u-text">
+											<h4 th:text="${session.loggedInPatient.name}"></h4>
+											<p class="text-muted" th:text="${session.loggedInPatient.email}">business@Agritrade.in</p>
+											<a href="ViewProfile" class="btn btn-rounded btn-danger btn-sm">View Profile</a>
+										</div>
+									</div>
+								</li>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="PatientDashboard">
+									<i class="ti-user"></i> 
+									My Dashboard
+								</a> 
+								
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="ChangePassword">
+								<i class="ti-settings"></i>
+									Change Password</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="Logout">
+								<i class="fa fa-power-off"></i> Logout</a>
+							</ul> <!-- /.dropdown-user --></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+		
+		<!--<div class="sidebar">
+			<div class="scrollbar-inner sidebar-wrapper">
+				<div class="user">
+					<div class="photo">
+						<img src="../assets/img/profile.jpg">
+					</div>
+					<div class="info">
+						<a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true"> 
+						<span>
+							<span th:text="${session.loggedInPatient.name}"></span> 
+							<span class="user-level">Administrator</span>
+								 <span class="caret"></span> 
+						</span>
+						</a>
+					</div>
+				</div>
+				<ul class="nav">
+					<li class="nav-item" th:classappend="${active1}">
+					 	<a href="AdminDashboard"> 
+							<i class="la la-dashboard"></i>
+							<p>Dashboard</p> 
+							<span class="badge badge-count"></span>
+						</a>
+					</li>
+					<li class="nav-item dropdown hidden-care" th:classappend="${active2}">
+						<a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
+							<i class="la la-user-plus"></i>
+							<p style="white-space: nowrap;">Manage Doctors</p>
+							<span class="badge" style="font-size: 18px;"><span class="caret" style="margin-left: -10px;"></span></span>
+						</a>
+						<div class="dropdown-menu w-75" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="AddDoctors">Add Doctors</a>
+							<a class="dropdown-item" href="ViewDoctors">View & Manage Doctors</a>
+						</div>
+					</li>
+					
+				
+					<li class="nav-item" th:classappend="${active3}">
+						<a href="ManagePatients"> 
+							<i class="la la-user-plus"></i>
+							<p>Manage Patients</p>
+						</a>
+					</li>
+					
+					<li class="nav-item" th:classappend="${active4}">
+						<a href="ViewAppointments"> 
+							<i class="la la-fonticons"></i>
+							<p>View Appointments</p>
+						</a>
+					</li>
+					
+					
+					<li class="nav-item" th:classappend="${active5}">
+						<a href="ManagePrescriptions"> 
+							<i class="la la-bell"></i>
+							<p>See Prescriptions</p> 
+							 <span class="badge badge-success">3</span> 
+						</a>
+					</li>
+					
+					<li class="nav-item" th:classappend="${active6}">
+						<a href="ManageMedicalReports"> 
+							<i class="la la-hospital-o"></i>
+							<p>Medical Reports</p> 	
+						</a>
+					</li>
+					
+					
+					<li class="nav-item" th:classappend="${active7}">
+						<a href="Enquiry"> 
+							<i class="la la-bullhorn"></i>
+							<p>Enquiries</p> 
+							 <span class="badge badge-success">3</span> 
+						</a>
+					</li>
+					
+					
+					<li class="nav-item py-4">
+						&nbsp;
+					</li>
+				</ul>
+			</div>
+		</div>-->
+		
+		<div class="main-panel w-100">
+			<div class="content" >
+				<div th:replace="${content}"></div>
+			</div>
+			<footer class="footer">
+				<div class="container-fluid">
+					<nav class="pull-left">
+						<ul class="nav">
+							<li class="nav-item"><a class="nav-link"
+								href="dashboard"> Dashboard </a></li>
+							<li class="nav-item"><a class="nav-link" href="#"> Help
+							</a></li>
+							<li class="nav-item"><a class="nav-link"
+								href=""> Licenses </a>
+							</li>
+						</ul>
+					</nav>
+					<div class="copyright ml-auto">
+						2025, made with <i class="la la-heart heart text-danger"></i> by <a
+							href="https://www.instagram.com/lucky_agency_4149" target="_blank">Vasikur Rahman</a>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</div>
+	
+	
+	<input type="text" id="msg" th:if="${msg}" th:value="${msg}">
+	<script type="text/javascript">
+		var msg = document.getElementById("msg");
+		if(msg.value!="")
+		{
+			alert(msg.value);
+		}
+	</script>
+	
+	
+	
+<script src="../assets/js/core/jquery.3.2.1.min.js"></script>
+<script src="../assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+<script src="../assets/js/core/popper.min.js"></script>
+<script src="../assets/js/core/bootstrap.min.js"></script>
+<script src="../assets/js/plugin/chartist/chartist.min.js"></script>
+<script src="../assets/js/plugin/chartist/plugin/chartist-plugin-tooltip.min.js"></script>
+
+<!-- <script src="../assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+ -->
+<script src="../assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js"></script>
+<script src="../assets/js/plugin/jquery-mapael/jquery.mapael.min.js"></script>
+<script src="../assets/js/plugin/jquery-mapael/maps/world_countries.min.js"></script>
+<script src="../assets/js/plugin/chart-circle/circles.min.js"></script>
+<script src="../assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+<script src="../assets/js/ready.min.js"></script>
+<script src="../assets/js/demo.js"></script>
+
+
+<!-- Data table js -->
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.flash.min.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.html5.min.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.print.min.js"></script>
+	
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#example').DataTable({
+            dom: 'Bfrtip',
+            buttons: [
+                'copy', 'csv', 'excel', 'pageLength'			//, 'pdf', 'print'
+            ],
+            lengthMenu: [
+                [10, 25, 50, 100, -1],
+                ['10', '25', '50', '100', 'all']
+            ]
+        });
+    });
+</script>
+
+
+<!-- Modal for displaying the current image from table-->
+<div class="modal fade" style="left: 50; top: 40;" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" style="width: 80%;">
+      <div class="modal-header">
+        <h5 class="modal-title" id="imageModalLabel">Profile Picture</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img id="modalImage" src="" class="img-fluid" alt="Profile Image">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- JavaScript to open the modal and set the image -->
+	<script>
+	  // Select all profile images with the class 'profile-img'
+	  var profileImages = document.querySelectorAll('.profile-img'); 
+
+	  // Modal elements
+	  var modalImage = document.getElementById('modalImage');
+	  var imageModal = new bootstrap.Modal(document.getElementById('imageModal'));
+
+	  // Ensure that profileImages is not empty
+	  if (profileImages.length > 0) {
+	    profileImages.forEach(function(profileImage) {
+	      // Add click event to each profile image
+	      profileImage.addEventListener('click', function() {
+	        var imgSrc = profileImage.getAttribute('src'); // Get the source of the clicked image
+	        modalImage.setAttribute('src', imgSrc); // Set the source of the image in the modal
+	        imageModal.show(); // Show the modal manually
+	      });
+	    });
+	  } else {
+	    console.error('No profile images found.');
+	  }
+
+	</script>
+</body>
+
+</html>

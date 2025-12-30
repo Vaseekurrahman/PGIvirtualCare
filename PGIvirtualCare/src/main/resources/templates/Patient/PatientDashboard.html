@@ -1,0 +1,132 @@
+<html th:replace="~{Patient/Patientbase::layout(~{::main})}">
+
+    <body>
+        <main>
+            <div class="row">
+                <div class="col-sm-11 mx-auto">
+                    <div
+                        class="card"
+                        style="border-radius:10px;"
+                    >
+                        <div class="row px-4">
+                            <div class="col-sm-6 pt-3">
+                                <h4> Welcome, <span
+                                        th:text="${session.loggedInPatient.name}"
+                                    >Vasikur Rahman</span>❤️❤️</h4>
+                                <p>Here is your Professional dashboard to track
+                                    your activity </p>
+                            </div>
+                            <div class="col-sm-6 text-right p-3 pt-5">
+                                <img
+                                    alt="image not found"
+                                    src="../assets/img/profile2.jpg"
+                                    class="rounded-circle"
+                                    width="80px"
+                                >
+                                <br><b
+                                    style="font-size:18px;"
+                                    th:text="${session.loggedInPatient.name}"
+                                >Vasikur Rahman</b>
+                                <p th:text="${session.loggedInPatient.email}">
+                                    vasikurrahman57@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-11 mx-auto">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div
+                                class="card  text-center pb-3 pt-4"
+                                style="border-radius:10px;"
+                            >
+                                <div
+                                    class="icon-circle bg-primary text-white mb-3 mx-auto ">
+                                    <i class="bi bi-journal-code"></i>
+                                </div>
+                                <p class="m-0">Check upcoming and past
+                                    appointment</p>
+                                <h5 class="fw-bold ">Appointment</h5>
+                                <h5 class="fw-bold">15</h5>
+                                <a
+                                    href="ViewAppointment"
+                                    class="btn btn-primary w-25 my-2 mx-auto"
+                                >View...</a>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div
+                                class="card  text-center pb-3 pt-4"
+                                style="border-radius:10px;"
+                            >
+                                <div
+                                    class="icon-circle bg-primary text-white mb-3 mx-auto ">
+                                    <i class="bi bi-journal-code"></i>
+                                </div>
+                                <p class="m-0">Check upcoming and past
+                                    appointment</p>
+                                <h5 class="fw-bold ">Appointment</h5>
+                                <h5 class="fw-bold">15</h5>
+                                <a
+                                    href="#"
+                                    class="btn btn-primary w-25 my-2 mx-auto"
+                                >View...</a>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div
+                                class="card  text-center pb-3 pt-4"
+                                style="border-radius:10px;"
+                            >
+                                <div
+                                    class="icon-circle bg-danger text-white mb-3 mx-auto ">
+                                    <i class="bi bi-clipboard-check-fill"></i>
+                                </div>
+                                <p class="m-0">Check upcoming and past
+                                    appointment</p>
+                                <h5 class="fw-bold ">Appointment</h5>
+                                <h5 class="fw-bold">15</h5>
+                                <a
+                                    href="#"
+                                    class="btn btn-primary w-25 my-2 mx-auto"
+                                >View...</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-11 mx-auto">
+                    <div
+                        class="card px-4 py-4"
+                        style="border-radius:10px;"
+                    >
+                        <div class="row">
+                            <div class="col-sm-8">
+                                <h5>Make an Appoinment for Your Better Health
+                                </h5>
+                            </div>
+                            <div class="col-sm-4 pb-3 text-right">
+                                <a
+                                    href="BookAppointment"
+                                    class="btn btn-primary"
+                                >Book Appointment</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <style>
+                .icon-circle {
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 1.8rem;
+                    box-shadow: 0 4px 10px rgba(0, 0, 0, 1);
+                }
+            </style>
+        </main>
+    </body>
+
+</html>

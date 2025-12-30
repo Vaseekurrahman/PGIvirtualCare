@@ -1,0 +1,80 @@
+<html th:replace="~{Admin/Adminbase::layout(~{::main})}">
+	
+	<body>
+		<main>
+			<div class="row">
+				<div class="col-sm-10 mx-auto">
+					<div class="card">
+						<div class="card-header bg-primary p-0">
+							<h3 class="text-center text-white fw-bold">Add Doctors</h3>
+						</div>
+						<div class="card-body ">
+							<form method="post" th:object="${doctor}">
+								<div class="row">
+									<div class="col-sm-6 mt-3">
+										<label class="fw-bold">Enter Doctor Name</label>
+										<input th:field="${doctor.name}" type="text" class="form-control" placeholder="Doctor Name" required="required">
+									</div>
+									
+									
+									<div class="col-sm-6 mt-3">
+								         <label class="fw-bold">Enter Doctor's' Age</label>
+									     <input th:field="${doctor.age}" type="number" class="form-control" placeholder="Doctor Age" required="required">
+									</div>
+									
+									<div class="col-sm-6 mt-3">
+										  <label class="fw-bold">Select Doctor Gender</label>
+										  <select th:field="${doctor.gender}" class="form-control">
+											<option value="">--Select Gender</option>
+											<option value="Male">Male</option>
+											<option value="Female">Female</option>
+										  </select>
+								    </div>
+									<div class="col-sm-6 mt-3">
+										<label class="fw-bold">Enter Doctor Email</label>
+										<input th:field="${doctor.email}" type="email" class="form-control" placeholder="Doctor Email" required="required">
+									</div>
+									<div class="col-sm-6 mt-3">
+										<label class="fw-bold">Enter Password</label>
+										<input th:field="${doctor.password}" type="text" class="form-control" placeholder="Password" required="required">
+								    </div>
+									<div class="col-sm-6 mt-3">
+										<label class="fw-bold">Enter Doctor Contact No</label>
+										<input th:field="${doctor.contactNumber}" type="text"  pattern="\d{10}" class="form-control" placeholder="Doctor contactNo" required="required">
+									</div>
+									<div class="col-sm-6 mt-3">
+										 <label class="fw-bold">Enter Doctor Aadhar No</label>
+										 <input th:field="${doctor.aadharNumber}" type="text" pattern="\d{12}"     class="form-control" placeholder="Doctor AadharNo" required="required">
+									</div>
+									<div class="col-sm-6 mt-3">
+								        <label class="fw-bold">Enter Doctor Specilization</label>
+										<select class="form-control" th:field="${doctor.specialization}">
+											<option value=" ">--Select Specialization--</option>
+											<option value="cardiolody">Cardiology</option>
+											<option value="Neurology">Neurology</option>
+											<option value="Orthopedics">Orthopedics</option>
+											<option value="Pediatrics">Pediatrics</option>
+											<option value="Dermatology">Dermatology</option>
+											<option value="General Medicine">General Medicine</option>
+											<option value="Gynecology">Gynecology</option>
+										</select>
+										</div>
+										<div class="col-sm-12 mt-3">
+											 <label class="fw-bold">Doctor's' Address</label>
+											 <textarea th:field="${doctor.address}" rows="2"  class="form-control" placeholder="Address" required="required"></textarea>
+										</div>
+										<div class="col-sm-12 text-center mt-4">
+											<br>
+											<button type="submit" class="btn btn-primary">Add Doctor</button>
+										</div>
+																	
+								</div>
+								
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+	</body>
+</html>

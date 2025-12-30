@@ -1,0 +1,53 @@
+<html th:replace="~{Patient/Patientbase::layout(~{::main})}">
+	<body>
+		<main>
+			<div class="row">
+				 <div class="col-sm-11 mx-auto">
+					<div class="card">
+						<div class="card-header bg-primary">
+							<div class="row">
+								<div class="col-sm-6">
+									<h4 class="m-0 text-light fw-bold">View Appointment</h4>
+								</div>
+								<div class="col-sm-6 text-right">
+									<a href="PatientDashboard" class="btn btn-light text-dark">Back To Dashboard</a>
+								</div>
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="table-reponsive">
+								<table class="table table-bordered">
+									<thead>
+										<tr>
+											<th>Sr.No</th>
+											<th>Docter Name</th>
+											<th>Docter Contact</th>
+											<th>Department</th>
+											<th>Date & Time</th>
+											<th>Symtomps</th>
+											<th>Booked At</th>
+											<th>Status</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr th:each="apt, srno : ${appointments}">
+											<td th:text="${srno.index + 1}"></td>
+											<td th:text="${apt.doctor.name}"></td>
+											<td th:text="${apt.doctor.contactNumber}"></td>
+											<td th:text="${apt.department}"></td>
+											<td th:text="${apt.date + ' [ '+ apt.time + ']'}"></td>
+											<td th:text="${apt.symtomps}"></td>
+											<td th:text="${apt.bookedAt}"></td>
+											<td th:text="${apt.status}"></td>
+										</tr>
+									</tbody>
+									
+								</table>
+							</div>
+						</div>
+					</div>
+				 </div>
+			</div>
+		</main>
+	</body>
+</html>
